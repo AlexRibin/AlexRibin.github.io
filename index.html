@@ -9,16 +9,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;400&display=swap">
 <style>
-  /* "Ribin" as five bytes on one line; the names sit on a hairline at the bottom. */
+  /* "Ribin" as five bytes on one line; names and links sit on a hairline at the bottom. */
   :root {
     --bg: #f4f4f2;
     --fg: #1e1e1c;
+    --muted: #85847f;
     --line: #dcdbd6;
     --sans: "Albert Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #161615; --fg: #e8e7e3; --line: #2c2c2a;
+      --bg: #161615; --fg: #e8e7e3; --muted: #8c8b86; --line: #2c2c2a;
       color-scheme: dark;
     }
   }
@@ -51,18 +52,55 @@
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.03em;
   }
-  h1 {
-    margin: auto 0 0;
+  .base {
+    margin-top: auto;
     padding-top: 1.25rem;
     border-top: 1px solid var(--line);
-    font: 400 0.9375rem/1.65 var(--sans);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+  }
+  .base h1 { margin: 0; font: 400 0.9375rem/1.65 var(--sans); }
+  .base p { margin: 0; color: var(--muted); text-wrap: pretty; }
+  .links {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.25rem 1.75rem;
+    align-content: start;
+  }
+  .links dt { color: var(--muted); }
+  .links dd { margin: 0; display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--muted);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+  a:hover { text-decoration-color: var(--fg); }
+  a:focus-visible { outline: 1px solid var(--fg); outline-offset: 4px; }
+  @media (max-width: 40rem) {
+    .base { grid-template-columns: minmax(0, 1fr); }
   }
 </style>
 </head>
 <body>
 <main>
   <p class="bits" role="img" aria-label="Ribin"><span>01010010</span><span>01101001</span><span>01100010</span><span>01101001</span><span>01101110</span></p>
-  <h1>Alex &amp; Olivia Ribin</h1>
+
+  <div class="base">
+    <div>
+      <h1>Alex &amp; Olivia Ribin</h1>
+      <p>Alex is building <a href="https://sixthings.ai">Sixthings</a>, an AI SDR for B2B teams.</p>
+    </div>
+    <dl class="links">
+      <dt>Alex</dt>
+      <dd><a href="https://www.linkedin.com/in/alexribin/">LinkedIn</a> <a href="https://x.com/AlexRibin">X</a> <a href="https://github.com/AlexRibin">GitHub</a></dd>
+      <dt>Olivia</dt>
+      <dd><a href="https://www.linkedin.com/in/olivia-ribin-zank/">LinkedIn</a> <a href="https://x.com/OliviaZank">X</a></dd>
+    </dl>
+  </div>
 </main>
 </body>
 </html>
