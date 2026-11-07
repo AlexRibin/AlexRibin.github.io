@@ -1,26 +1,68 @@
-<html>
-  <style type="text/css">
-    body {
-      height: 100%;
-      position: relative;}
-    p {
-      margin: 0;
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      margin-right: -50%;
-      transform: translate(-50%, -20%);
-      max-width: 450px;
-      font-family: "Arial";
-      letter-spacing: 1px;
-      }
-  </style>
-  <head>
-    <title>Alex Ribin</title>
-  </head>
-  <body>
-    <p>
-      01001100 01100101 01110100 00100111 01110011 00100000 01110100 01100001 01101100 01101011
-    </p>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alex &amp; Olivia Ribin</title>
+<meta name="description" content="Alex &amp; Olivia Ribin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;400&display=swap">
+<style>
+  /* "Ribin" as five bytes on one line; the names sit on a hairline at the bottom. */
+  :root {
+    --bg: #f4f4f2;
+    --fg: #1e1e1c;
+    --line: #dcdbd6;
+    --sans: "Albert Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161615; --fg: #e8e7e3; --line: #2c2c2a;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 400 0.9375rem/1.65 var(--sans);
+  }
+  main {
+    min-height: 100%;
+    max-width: 64rem;
+    margin-inline: auto;
+    padding-block: clamp(3rem, 14vh, 8rem) 2.5rem;
+    padding-left: max(28px, env(safe-area-inset-left, 0px));
+    padding-right: max(28px, env(safe-area-inset-right, 0px));
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .bits {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2em 0.6em;
+    font: 200 clamp(1rem, 3.3vw, 2.4rem)/1.2 var(--sans);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.03em;
+  }
+  h1 {
+    margin: auto 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font: 400 0.9375rem/1.65 var(--sans);
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="bits" role="img" aria-label="Ribin"><span>01010010</span><span>01101001</span><span>01100010</span><span>01101001</span><span>01101110</span></p>
+  <h1>Alex &amp; Olivia Ribin</h1>
+</main>
+</body>
 </html>
